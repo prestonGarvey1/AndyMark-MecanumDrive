@@ -1,0 +1,21 @@
+[
+  {
+    "type": "java",
+    "name": "jar (in project AndyMark-AM14U-mechanum)",
+    "extensions": [
+      {
+        "name": "Sim GUI",
+        "libName": "C:\\Users\\domli\\Documents\\AndyMark-AM14U-mechanum\\build\\jni\\release\\halsim_gui.dll",
+        "defaultEnabled": true
+      },
+      {
+        "name": "Use Real DriverStation",
+        "libName": "C:\\Users\\domli\\Documents\\AndyMark-AM14U-mechanum\\build\\jni\\release\\halsim_ds_socket.dll",
+        "defaultEnabled": false
+      }
+    ],
+    "environment": {},
+    "libraryDir": "C:\\Users\\domli\\Documents\\AndyMark-AM14U-mechanum\\build\\jni\\release",
+    "mainClassName": "frc.robot.Main"
+  }
+]
