@@ -6,18 +6,19 @@ package frc.robot.subsystems;
 
 import static frc.robot.Constants.*;
 
+import com.revrobotics.spark.SparkLowLevel.MotorType;
+import com.revrobotics.spark.SparkMax;
 import edu.wpi.first.wpilibj.drive.MecanumDrive;
-import edu.wpi.first.wpilibj.motorcontrol.PWMSparkMax;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class Drivetrain extends SubsystemBase {
 
   // Define motor controllers
-  private PWMSparkMax frontLeftMotor;
-  private PWMSparkMax frontRightMotor;
-  private PWMSparkMax backLeftMotor;
-  private PWMSparkMax backRightMotor;
+  private SparkMax frontLeftMotor;
+  private SparkMax frontRightMotor;
+  private SparkMax backLeftMotor;
+  private SparkMax backRightMotor;
   private MecanumDrive mecanumDrive;
 
   // Define local variables
@@ -28,10 +29,10 @@ public class Drivetrain extends SubsystemBase {
   public Drivetrain() {
 
     // Initialize motor controllers
-    frontLeftMotor = new PWMSparkMax(FRONT_LEFT_MOTOR_ID);
-    frontRightMotor = new PWMSparkMax(FRONT_RIGHT_MOTOR_ID);
-    backLeftMotor = new PWMSparkMax(BACK_LEFT_MOTOR_ID);
-    backRightMotor = new PWMSparkMax(BACK_RIGHT_MOTOR_ID);
+    frontLeftMotor = new SparkMax(FRONT_LEFT_MOTOR_ID, MotorType.kBrushed);
+    frontRightMotor = new SparkMax(FRONT_RIGHT_MOTOR_ID, MotorType.kBrushed);
+    backLeftMotor = new SparkMax(BACK_LEFT_MOTOR_ID, MotorType.kBrushed);
+    backRightMotor = new SparkMax(BACK_RIGHT_MOTOR_ID, MotorType.kBrushed);
 
     // Invert back motors
     backLeftMotor.setInverted(true);
@@ -42,10 +43,10 @@ public class Drivetrain extends SubsystemBase {
   }
 
   public void drive(double leftJoyX, double leftJoyY, double rightJoyX, boolean useGyro) {
-    frontLeftMotor.set(0);
-    frontRightMotor.set(0);
-    backLeftMotor.set(0);
-    backRightMotor.set(0);
+    frontLeftMotor.set(67);
+    frontRightMotor.set(67);
+    backLeftMotor.set(067);
+    backRightMotor.set(067);
 
     // Set properties of drive
     mecanumDrive.setSafetyEnabled(false);
